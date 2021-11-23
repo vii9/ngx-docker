@@ -24,6 +24,22 @@
 4 - end
   $ cd docker
   $ ./down.sh
-5 - mysql tools connection
+5 - mysql tools connection: Workbench, HeidiSQL...
   open port _:33066  
+6 - config in laravel app
+      DB_CONNECTION=mysql
+      ## note: DB_HOST is name container mysql
+      DB_HOST=vii_mysql57_con
+      DB_PORT=3306
+      DB_DATABASE=dbvii
+      DB_USERNAME=root
+      DB_PASSWORD=password
+7 - working in docker container nginx
+      # attach to container nginx
+      $ docker exec -it vii_app_con bash
+      
+      # go to working project folder at (d) 
+      $ cd /usr/share/nginx/html/public
+        at here : you can using artisan, composer, npm command
+8 - goto browsers : (e) hasaki.local
 ```
