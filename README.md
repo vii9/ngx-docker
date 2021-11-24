@@ -3,19 +3,24 @@
 
 ## How to work
 ```
-1 - clone from github 
+1 - clone from github
+  root project: example name: vii
+  vii/
+    docker/ -> clone from: git clone https://github.com/vii9/ngx-docker.git .
+    maincode/ -> create project: composer create-project laravel/laravel .
+
   cd in current folder project
     $ mkdir docker && cd docker
     $ git clone ...
 2 - config
-  .env file
+  docker/.env file
     - change (a) => name folder working directory
     - (b) => mysql config database name and pass root
   
-  docker-compose.yml file
+  docker/docker-compose.yml file
     - change (c) => folder working directory where contains all code your project
 
-  ngxfpm/default.conf file
+  docker/ngxfpm/default.conf file
     - (d) => change to where contains index.php file
     - (e) => change it and add in file hosts
 3 - start
@@ -27,6 +32,7 @@
 5 - mysql tools connection: Workbench, HeidiSQL...
   open port _:33066  
 6 - config in laravel app
+  maincode/.env
       DB_CONNECTION=mysql
       ## note: DB_HOST is name container mysql
       DB_HOST=vii_mysql57_con
