@@ -7,7 +7,7 @@ services:
       context: ./ngxfpm
     working_dir: /usr/share/nginx/html
     hostname: webserver
-    ports:
+    ports: #### multi (f)
       - "80:80"
       - "443:443"
     restart: always  
@@ -38,7 +38,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
-    ports:
+    ports: #### multi (g)
       - '33066:3306'
     expose:
       - '3306'
